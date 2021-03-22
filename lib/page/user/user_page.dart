@@ -24,8 +24,13 @@ class _UserPageState extends State<UserPage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text('Akun Kamu'),
-        trailing: CupertinoButton(
+        leading: CupertinoButton(
           child: Text('Log Out'),
+          padding: EdgeInsets.zero,
+          onPressed: () {},
+        ),
+        trailing: CupertinoButton(
+          child: Text('Edit'),
           padding: EdgeInsets.zero,
           onPressed: () {},
         ),
