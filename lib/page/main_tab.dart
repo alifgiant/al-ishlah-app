@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-class Tab {
+class TabData {
   final Widget content;
   final Widget icon;
   final String label;
 
-  Tab(this.content, this.icon, this.label);
+  TabData(this.content, this.icon, this.label);
 }

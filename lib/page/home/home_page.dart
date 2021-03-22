@@ -1,7 +1,7 @@
 import 'package:al_ishlah_app/page/main_tab.dart';
 import 'package:flutter/cupertino.dart';
 
-class HomeTab implements Tab {
+class HomeTab implements TabData {
   @override
   Widget content = HomePage();
 

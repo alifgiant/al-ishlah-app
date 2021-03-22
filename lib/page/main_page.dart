@@ -10,7 +10,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final tabs = <Tab>[
+  final tabs = <TabData>[
     HomeTab(),
     TransactionTab(),
     UserTab(),
