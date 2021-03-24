@@ -20,6 +20,13 @@ class TrxSeminarPage extends StatefulWidget {
 class _TrxSeminarPageState extends State<TrxSeminarPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Donasi'));
+    return ListView.builder(
+      itemCount: 21,
+      itemBuilder: (ctx, i) {
+        return Center(
+          child: Text('Seminar $i'),
+        );
+      },
+    );
   }
 }
