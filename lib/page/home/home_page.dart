@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final double padSize = 16;
-    final boxSize = MediaQuery.of(context).size.width - (16 * 2);
+    final boxSize = MediaQuery.of(context).size.width - (padSize * 2);
 
     return SafeArea(
       child: ListView(
@@ -65,7 +65,15 @@ class _HomePageState extends State<HomePage> {
               width: halfBox,
               height: halfBox,
               child: Container(
-                color: Colors.amber,
+                child: Icon(
+                  Icons.festival,
+                  size: 42,
+                  color: Colors.white,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(6),
+                ),
               ),
             ),
             Container(width: 16),
@@ -73,7 +81,15 @@ class _HomePageState extends State<HomePage> {
               width: halfBox,
               height: halfBox,
               child: Container(
-                color: Colors.amber,
+                child: Icon(
+                  Icons.face,
+                  size: 42,
+                  color: Colors.white,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(6),
+                ),
               ),
             )
           ],
@@ -104,12 +120,55 @@ class _HomePageState extends State<HomePage> {
           physics: NeverScrollableScrollPhysics(),
           itemCount: 10,
           itemBuilder: (ctx, i) {
-            return Container(
-              width: boxSize,
-              height: boxSize / 2,
-              padding: const EdgeInsets.only(bottom: 16),
-              child: Container(
-                color: Colors.amber,
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: boxSize,
+                        decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Icon(
+                          CupertinoIcons.pano,
+                          size: 42,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text(
+                          '3 hari lagi',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(height: 4),
+                  Text(
+                    'Belajar Online Marketing #$i',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Container(height: 4),
+                  Text(
+                    'Belajar bersama pak gitu, kelas selama 3 hari 3 malam.',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  Container(height: 4),
+                ],
               ),
             );
           },

@@ -28,8 +28,12 @@ class _TrxDonationPageState extends State<TrxDonationPage> {
         itemBuilder: (ctx, i) {
           final time = DateFormat('dd-MMM-yyyy HH:mm');
           return ListTile(
+            onTap: () {},
             leading: Container(
-              color: Colors.blue,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(6),
+              ),
               padding: const EdgeInsets.all(12),
               child: Icon(Icons.festival, color: Colors.white),
             ),
@@ -46,7 +50,7 @@ class _TrxDonationPageState extends State<TrxDonationPage> {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w300,
-                    letterSpacing: 2,
+                    letterSpacing: 1,
                   ),
                 ),
               ],
