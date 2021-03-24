@@ -1,4 +1,6 @@
 import 'package:al_ishlah_app/page/main_tab.dart';
+import 'package:al_ishlah_app/page/transaction/trx_donation_page.dart';
+import 'package:al_ishlah_app/page/transaction/trx_seminar_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class TransactionTab implements TabData {
@@ -18,9 +20,12 @@ class TransactionPage extends StatefulWidget {
 }
 
 class _TransactionPageState extends State<TransactionPage> {
-  final List<String> _tabKey = ['donasi', 'seminar'];
-  final PageController _pageController = PageController();
   int selectedTab = 0;
+  final PageController _pageController = PageController();
+  final List<TabData> _tabs = [
+    TrxDonationTab(),
+    TrxSeminarTab(),
+  ];
 
   void updateIndex(int index) {
     _pageController.animateToPage(
@@ -39,13 +44,13 @@ class _TransactionPageState extends State<TransactionPage> {
       child: Column(
         children: [
           CupertinoSlidingSegmentedControl(
-            children: {
-              _tabKey[0]: Text('Donation'),
-              _tabKey[1]: Text('Seminar'),
-            },
-            groupValue: _tabKey[selectedTab],
+            children: _tabs
+                .asMap()
+                .map((key, value) => MapEntry(value.label, Text(value.label))),
+            groupValue: _tabs[selectedTab].label,
             onValueChanged: (String? str) {
-              final newIndex = _tabKey.indexOf(str!);
+              final newIndex =
+                  _tabs.indexWhere((element) => element.label == str);
               updateIndex(newIndex);
             },
           ),
@@ -53,10 +58,7 @@ class _TransactionPageState extends State<TransactionPage> {
             child: PageView(
               controller: _pageController,
               onPageChanged: (i) => updateIndex(i),
-              children: [
-                Center(child: Text('Donasi')),
-                Center(child: Text('Seminar'))
-              ],
+              children: _tabs.map((e) => e.content).toList(),
             ),
           ),
         ],
