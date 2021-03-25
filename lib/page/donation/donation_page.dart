@@ -1,4 +1,4 @@
-import 'package:al_ishlah_app/data/donation_info.dart';
+import 'package:al_ishlah_app/data/donation.dart';
 import 'package:al_ishlah_app/repository/donation_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

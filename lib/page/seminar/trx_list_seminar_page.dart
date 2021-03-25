@@ -1,5 +1,6 @@
 import 'package:al_ishlah_app/page/seminar/trx_detail_seminar_page.dart';
 import 'package:al_ishlah_app/page/tab_data.dart';
+import 'package:al_ishlah_app/utils/date_format_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -40,7 +41,6 @@ class _TrxListSeminarPageState extends State<TrxListSeminarPage> {
       child: ListView.builder(
         itemCount: 21,
         itemBuilder: (ctx, i) {
-          final time = DateFormat('dd-MMM-yyyy HH:mm');
           return InkWell(
             onTap: () => action.goToTrxDetailPage(context),
             child: Padding(
@@ -91,7 +91,7 @@ class _TrxListSeminarPageState extends State<TrxListSeminarPage> {
                         children: [
                           Text('Dibeli Tanggal'),
                           Text(
-                            '${time.format(DateTime.now())}',
+                            '${DateTime.now().formatNoDay(withHour: true)}',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w300,

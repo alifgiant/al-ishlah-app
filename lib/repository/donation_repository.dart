@@ -1,13 +1,16 @@
-import 'package:al_ishlah_app/data/donation_info.dart';
+import 'package:al_ishlah_app/data/donation.dart';
 
 class DonationRepository {
   Future<DonationInfo> getDonationInfo(String key) async {
     // TODO: replace real implementation
     await Future.delayed(Duration(seconds: 2));
-    if (key == 'course')
-      return courseDonation;
-    else
-      return infraDonation;
+    return key == 'course' ? courseDonation : infraDonation;
+  }
+
+  Future<DonationInvoice> getDonationInvoice(String key) async {
+    // TODO: replace real implementation
+    await Future.delayed(Duration(seconds: 2));
+    return DonationInvoice('1221asda2', DateTime.now(), 500000, 'DANA');
   }
 }
 

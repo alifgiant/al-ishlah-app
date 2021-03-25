@@ -1,8 +1,8 @@
 import 'package:al_ishlah_app/page/donation/trx_detail_donation_page.dart';
 import 'package:al_ishlah_app/page/tab_data.dart';
+import 'package:al_ishlah_app/utils/date_format_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class TrxListDonationTab implements TabData {
   @override
@@ -23,7 +23,7 @@ class TrxListDonationPage extends StatefulWidget {
 class _TrxListDonationPageAction {
   void goToTrxDetailPage(BuildContext context) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => TrxDetailDonationPage()),
+      CupertinoPageRoute(builder: (ctx) => TrxDetailDonationPage('1dasdqwe')),
     );
   }
 }
@@ -37,7 +37,6 @@ class _TrxListDonationPageState extends State<TrxListDonationPage> {
       child: ListView.builder(
         itemCount: 21,
         itemBuilder: (ctx, i) {
-          final time = DateFormat('dd-MMM-yyyy HH:mm');
           return ListTile(
             onTap: () => action.goToTrxDetailPage(context),
             leading: Container(
@@ -57,7 +56,7 @@ class _TrxListDonationPageState extends State<TrxListDonationPage> {
                 ),
                 Container(height: 2),
                 Text(
-                  '${time.format(DateTime.now())}',
+                  '${DateTime.now().formatNoDay(withHour: true)}',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w300,
