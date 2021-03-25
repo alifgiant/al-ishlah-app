@@ -1,11 +1,12 @@
+import 'package:al_ishlah_app/page/donation/trx_detail_donation_page.dart';
 import 'package:al_ishlah_app/page/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TrxDonationTab implements TabData {
+class TrxListDonationTab implements TabData {
   @override
-  Widget content = TrxDonationPage();
+  Widget content = TrxListDonationPage();
 
   @override
   Widget icon = Icon(CupertinoIcons.square_list);
@@ -14,12 +15,22 @@ class TrxDonationTab implements TabData {
   String label = 'Donation';
 }
 
-class TrxDonationPage extends StatefulWidget {
+class TrxListDonationPage extends StatefulWidget {
   @override
-  _TrxDonationPageState createState() => _TrxDonationPageState();
+  _TrxListDonationPageState createState() => _TrxListDonationPageState();
 }
 
-class _TrxDonationPageState extends State<TrxDonationPage> {
+class _TrxListDonationPageAction {
+  void goToTrxDetailPage(BuildContext context) {
+    Navigator.of(context).push(
+      CupertinoPageRoute(builder: (ctx) => TrxDetailDonationPage()),
+    );
+  }
+}
+
+class _TrxListDonationPageState extends State<TrxListDonationPage> {
+  final _TrxListDonationPageAction action = _TrxListDonationPageAction();
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -28,7 +39,7 @@ class _TrxDonationPageState extends State<TrxDonationPage> {
         itemBuilder: (ctx, i) {
           final time = DateFormat('dd-MMM-yyyy HH:mm');
           return ListTile(
-            onTap: () {},
+            onTap: () => action.goToTrxDetailPage(context),
             leading: Container(
               decoration: BoxDecoration(
                 color: Colors.blue,

@@ -1,5 +1,5 @@
-import 'package:al_ishlah_app/page/donation/detail_donation_page.dart';
-import 'package:al_ishlah_app/page/seminar/detail_seminar_page.dart';
+import 'package:al_ishlah_app/page/donation/donation_page.dart';
+import 'package:al_ishlah_app/page/seminar/seminar_page.dart';
 import 'package:al_ishlah_app/page/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,13 +28,13 @@ class _HomePageAction {
 
   void goToDonationDetailPage(BuildContext context, String type) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => DetailDonationPage()),
+      CupertinoPageRoute(builder: (ctx) => DonationPage()),
     );
   }
 
   void goToSeminarDetailPage(BuildContext context) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => DetailSeminarPage()),
+      CupertinoPageRoute(builder: (ctx) => SeminarPage()),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:al_ishlah_app/page/tab_data.dart';
-import 'package:al_ishlah_app/page/donation/trx_donation_page.dart';
-import 'package:al_ishlah_app/page/seminar/trx_seminar_page.dart';
+import 'package:al_ishlah_app/page/donation/trx_list_donation_page.dart';
+import 'package:al_ishlah_app/page/seminar/trx_list_seminar_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class TransactionTab implements TabData {
@@ -23,8 +23,8 @@ class _TransactionPageState extends State<TransactionPage> {
   int selectedTab = 0;
   final PageController _pageController = PageController();
   final List<TabData> _tabs = [
-    TrxDonationTab(),
-    TrxSeminarTab(),
+    TrxListDonationTab(),
+    TrxListSeminarTab(),
   ];
 
   void updateIndex(int index) {

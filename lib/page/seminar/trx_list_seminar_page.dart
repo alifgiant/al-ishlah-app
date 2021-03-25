@@ -1,11 +1,12 @@
+import 'package:al_ishlah_app/page/seminar/trx_detail_seminar_page.dart';
 import 'package:al_ishlah_app/page/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TrxSeminarTab implements TabData {
+class TrxListSeminarTab implements TabData {
   @override
-  Widget content = TrxSeminarPage();
+  Widget content = TrxListSeminarPage();
 
   @override
   Widget icon = Icon(CupertinoIcons.square_list);
@@ -14,12 +15,22 @@ class TrxSeminarTab implements TabData {
   String label = 'Seminar';
 }
 
-class TrxSeminarPage extends StatefulWidget {
+class TrxListSeminarPage extends StatefulWidget {
   @override
-  _TrxSeminarPageState createState() => _TrxSeminarPageState();
+  _TrxListSeminarPageState createState() => _TrxListSeminarPageState();
 }
 
-class _TrxSeminarPageState extends State<TrxSeminarPage> {
+class _TrxListSeminarPageAction {
+  void goToTrxDetailPage(BuildContext context) {
+    Navigator.of(context).push(
+      CupertinoPageRoute(builder: (ctx) => TrxDetailSeminarPage()),
+    );
+  }
+}
+
+class _TrxListSeminarPageState extends State<TrxListSeminarPage> {
+  final _TrxListSeminarPageAction action = _TrxListSeminarPageAction();
+
   @override
   Widget build(BuildContext context) {
     final double padSize = 16;
@@ -31,7 +42,7 @@ class _TrxSeminarPageState extends State<TrxSeminarPage> {
         itemBuilder: (ctx, i) {
           final time = DateFormat('dd-MMM-yyyy HH:mm');
           return InkWell(
-            onTap: () {},
+            onTap: () => action.goToTrxDetailPage(context),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Column(
