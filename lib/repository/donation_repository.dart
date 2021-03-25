@@ -10,7 +10,13 @@ class DonationRepository {
   Future<DonationInvoice> getDonationInvoice(String key) async {
     // TODO: replace real implementation
     await Future.delayed(Duration(seconds: 2));
-    return DonationInvoice('1221asda2', DateTime.now(), 500000, 'DANA');
+    return DonationInvoice(
+      '1221asda2',
+      '/donation/course',
+      DateTime.now(),
+      500000,
+      'DANA',
+    );
   }
 }
 

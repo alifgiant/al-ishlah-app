@@ -8,9 +8,16 @@ class DonationInfo {
 
 class DonationInvoice {
   final String id;
+  final String eventUrl;
   final DateTime time;
   final double total;
   final String paymentChannel;
 
-  DonationInvoice(this.id, this.time, this.total, this.paymentChannel);
+  DonationInvoice(
+    this.id,
+    this.eventUrl,
+    this.time,
+    this.total,
+    this.paymentChannel,
+  );
 }

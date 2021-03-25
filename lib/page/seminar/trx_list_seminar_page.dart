@@ -24,7 +24,7 @@ class TrxListSeminarPage extends StatefulWidget {
 class _TrxListSeminarPageAction {
   void goToTrxDetailPage(BuildContext context) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => TrxDetailSeminarPage()),
+      CupertinoPageRoute(builder: (ctx) => TrxDetailSeminarPage('asdas')),
     );
   }
 }

@@ -1,10 +1,23 @@
-import 'package:al_ishlah_app/data/seminar_info.dart';
+import 'package:al_ishlah_app/data/seminar.dart';
 
 class SeminarRepository {
   Future<SeminarInfo> getDonationInfo(String key) async {
     // TODO: replace real implementation
     await Future.delayed(Duration(seconds: 2));
     return seminarInfo;
+  }
+
+  Future<SeminarInvoice> getSeminarInvoice(String key) async {
+    // TODO: replace real implementation
+    await Future.delayed(Duration(seconds: 2));
+    return SeminarInvoice(
+      '1221asda2',
+      'Belanar Online Marketing #1',
+      '/seminar/11xcvxs',
+      DateTime.now(),
+      500000,
+      'DANA',
+    );
   }
 }
 

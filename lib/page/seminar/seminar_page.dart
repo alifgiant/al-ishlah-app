@@ -1,5 +1,5 @@
 import 'package:al_ishlah_app/utils/money_utils.dart';
-import 'package:al_ishlah_app/data/seminar_info.dart';
+import 'package:al_ishlah_app/data/seminar.dart';
 import 'package:al_ishlah_app/repository/seminar_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
