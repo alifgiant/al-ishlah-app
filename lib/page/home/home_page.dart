@@ -22,9 +22,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageAction {
   void goToDonationBuildingDetailPage(BuildContext context) =>
-      goToDonationDetailPage(context, 'building');
+      goToDonationDetailPage(context, 'infra');
   void goToDonationStudyDetailPage(BuildContext context) =>
-      goToDonationDetailPage(context, 'study');
+      goToDonationDetailPage(context, 'course');
 
   void goToDonationDetailPage(BuildContext context, String key) {
     Navigator.of(context).push(
