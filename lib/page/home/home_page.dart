@@ -26,9 +26,9 @@ class _HomePageAction {
   void goToDonationStudyDetailPage(BuildContext context) =>
       goToDonationDetailPage(context, 'study');
 
-  void goToDonationDetailPage(BuildContext context, String type) {
+  void goToDonationDetailPage(BuildContext context, String key) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => DonationPage()),
+      CupertinoPageRoute(builder: (ctx) => DonationPage(key)),
     );
   }
 

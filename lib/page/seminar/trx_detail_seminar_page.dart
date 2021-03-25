@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 class TrxDetailSeminarPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _StateTrxDetailSeminarPage();
+  State<StatefulWidget> createState() => _TrxDetailSeminarPageState();
 }
 
-class _StateTrxDetailSeminarPage extends State<TrxDetailSeminarPage> {
+class _TrxDetailSeminarPageState extends State<TrxDetailSeminarPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(

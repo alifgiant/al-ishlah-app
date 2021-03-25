@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 class SeminarPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _StateSeminarPage();
+  State<StatefulWidget> createState() => _SeminarPageState();
 }
 
-class _StateSeminarPage extends State<SeminarPage> {
+class _SeminarPageState extends State<SeminarPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
