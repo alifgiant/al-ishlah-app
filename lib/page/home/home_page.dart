@@ -1,4 +1,6 @@
-import 'package:al_ishlah_app/page/main_tab.dart';
+import 'package:al_ishlah_app/page/donation/detail_donation_page.dart';
+import 'package:al_ishlah_app/page/seminar/detail_seminar_page.dart';
+import 'package:al_ishlah_app/page/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +20,30 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+class _HomePageAction {
+  void goToDonationBuildingDetailPage(BuildContext context) =>
+      goToDonationDetailPage(context, 'building');
+  void goToDonationStudyDetailPage(BuildContext context) =>
+      goToDonationDetailPage(context, 'study');
+
+  void goToDonationDetailPage(BuildContext context, String type) {
+    Navigator.of(context).push(
+      CupertinoPageRoute(builder: (ctx) => DetailDonationPage()),
+    );
+  }
+
+  void goToSeminarDetailPage(BuildContext context) {
+    Navigator.of(context).push(
+      CupertinoPageRoute(builder: (ctx) => DetailSeminarPage()),
+    );
+  }
+}
+
 class _HomePageState extends State<HomePage> {
   static const double padSize = 16;
   static const double padSizeHalf = padSize / 2;
+
+  final action = _HomePageAction();
 
   @override
   Widget build(BuildContext context) {
@@ -71,47 +94,51 @@ class _HomePageState extends State<HomePage> {
                 .copyWith(fontWeight: FontWeight.w300),
           ),
           Container(height: 12),
-          Row(
-            children: [
-              Material(
-                color: Colors.amber,
-                clipBehavior: Clip.hardEdge,
-                borderRadius: BorderRadius.circular(6),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    width: halfBox,
-                    height: halfBox,
-                    child: Icon(
-                      Icons.festival,
-                      size: 42,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              Container(width: 16),
-              Material(
-                color: Colors.amber,
-                clipBehavior: Clip.hardEdge,
-                borderRadius: BorderRadius.circular(6),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    width: halfBox,
-                    height: halfBox,
-                    child: Icon(
-                      Icons.face,
-                      size: 42,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+          getDonationOption(halfBox),
         ],
       ),
+    );
+  }
+
+  Row getDonationOption(double halfBox) {
+    return Row(
+      children: [
+        Material(
+          color: Colors.amber,
+          clipBehavior: Clip.hardEdge,
+          borderRadius: BorderRadius.circular(6),
+          child: InkWell(
+            onTap: () => action.goToDonationBuildingDetailPage(context),
+            child: SizedBox(
+              width: halfBox,
+              height: halfBox,
+              child: Icon(
+                Icons.festival,
+                size: 42,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        Container(width: 16),
+        Material(
+          color: Colors.amber,
+          clipBehavior: Clip.hardEdge,
+          borderRadius: BorderRadius.circular(6),
+          child: InkWell(
+            onTap: () => action.goToDonationStudyDetailPage(context),
+            child: SizedBox(
+              width: halfBox,
+              height: halfBox,
+              child: Icon(
+                Icons.face,
+                size: 42,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 
@@ -154,7 +181,7 @@ class _HomePageState extends State<HomePage> {
       itemCount: 10,
       itemBuilder: (ctx, i) {
         return InkWell(
-          onTap: () {},
+          onTap: () => action.goToSeminarDetailPage(context),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: padSize,

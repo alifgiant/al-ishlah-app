@@ -1,7 +1,7 @@
 import 'package:al_ishlah_app/page/home/home_page.dart';
 import 'package:al_ishlah_app/page/user/user_page.dart';
 import 'package:al_ishlah_app/page/transaction/transaction_page.dart';
-import 'package:al_ishlah_app/page/main_tab.dart';
+import 'package:al_ishlah_app/page/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 
 class MainPage extends StatefulWidget {

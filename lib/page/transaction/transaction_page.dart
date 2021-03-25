@@ -1,6 +1,6 @@
-import 'package:al_ishlah_app/page/main_tab.dart';
-import 'package:al_ishlah_app/page/transaction/trx_donation_page.dart';
-import 'package:al_ishlah_app/page/transaction/trx_seminar_page.dart';
+import 'package:al_ishlah_app/page/tab_data.dart';
+import 'package:al_ishlah_app/page/donation/trx_donation_page.dart';
+import 'package:al_ishlah_app/page/seminar/trx_seminar_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class TransactionTab implements TabData {
