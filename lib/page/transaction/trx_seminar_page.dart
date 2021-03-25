@@ -40,7 +40,7 @@ class _TrxSeminarPageState extends State<TrxSeminarPage> {
                   Stack(
                     children: [
                       Container(
-                        height: 120,
+                        height: boxSize / 3,
                         width: boxSize,
                         decoration: BoxDecoration(
                           color: Colors.lightBlue,
