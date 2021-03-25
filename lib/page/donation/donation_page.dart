@@ -87,7 +87,7 @@ class _DonationPageState extends State<DonationPage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('Detail Donasi'),
+        middle: Text(_donationInfo?.title ?? 'Detail Donasi'),
       ),
       child: _donationInfo == null ? loadingView() : getLoadedView(),
     );

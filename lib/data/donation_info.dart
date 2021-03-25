@@ -3,5 +3,5 @@ class DonationInfo {
   final String title;
   final String htmlTextDetail;
 
-  DonationInfo(this.key, this.title, this.htmlTextDetail);
+  const DonationInfo(this.key, this.title, this.htmlTextDetail);
 }

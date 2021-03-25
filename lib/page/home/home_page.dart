@@ -34,7 +34,7 @@ class _HomePageAction {
 
   void goToSeminarDetailPage(BuildContext context) {
     Navigator.of(context).push(
-      CupertinoPageRoute(builder: (ctx) => SeminarPage()),
+      CupertinoPageRoute(builder: (ctx) => SeminarPage('1121312a')),
     );
   }
 }
