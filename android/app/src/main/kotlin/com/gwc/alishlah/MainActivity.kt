@@ -1,4 +1,4 @@
-package com.example.al_ishlah_app
+package com.gwc.alishlah
 
 import io.flutter.embedding.android.FlutterActivity
 

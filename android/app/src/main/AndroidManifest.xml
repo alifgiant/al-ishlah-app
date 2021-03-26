@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.al_ishlah_app">
+    package="com.gwc.alishlah">
    <application
         android:label="Portal Al-Ishlah"
         android:icon="@mipmap/ic_launcher">
